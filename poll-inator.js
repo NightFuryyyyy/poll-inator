@@ -230,7 +230,7 @@ javascript:
         "div",
         {
             className: "titleDiv",
-            textContent: "Poll results",
+            textContent: "poll-inator",
         },
         titleBar
     );
