@@ -23,7 +23,7 @@ Bookmarklet to extract WhatsApp poll responses.
 
 ## Install
 
-Click [this link](https://example.com) for instructions.
+Click [this link](https://nightfuryyyyy.github.io/poll-inator/) for instructions.
 
 ## Bonus
 
