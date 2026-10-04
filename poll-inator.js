@@ -112,100 +112,7 @@ javascript:
     );
     const style = createElement(
         "style",
-        {
-            textContent: `
-                #pollResultWindow {
-                    background: rgb(22, 23, 23);
-                    padding: 14px;
-                    font-size: 14px;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 8px;
-                    width: 90vw;
-                    max-width: 300px;
-                    border-radius: 8px;
-                    position: fixed;
-                    top: 0px;
-                    left: 0px;
-                    z-index: 100;
-                    border: 1px solid #343535;
-                }
-                #pollResultWindow .titleBar {
-                    display: flex;
-                    align-items: center;
-                    gap: 4px;
-                    margin: -14px -14px 0;
-                    padding: 14px 14px 0;
-                }
-                #pollResultWindow .titleDiv {
-                    flex: 1;
-                    font-size: 16px;
-                }
-                #pollResultWindow .closeButtonDiv {
-                    padding: 4px;
-                    background: rgb(36, 38, 38);
-                    border-radius: 4px;
-                }
-                #pollResultWindow .closeButtonDiv svg {
-                    height: 16px;
-                    fill: rgb(255, 255, 255);
-                }
-                #pollResultWindow .windowContentDiv {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 8px;
-                }
-                #pollResultWindow .replaceYouDiv {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 4px;
-                }
-                #pollResultWindow .replaceYouInput {
-                    background: rgb(36, 38, 38);
-                    padding: 4px;
-                    color: rgb(255, 255, 255);
-                    font-size: 14px;
-                    border-radius: 4px;
-                    border: none;
-                }
-                #pollResultWindow .copyDiv {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 4px;
-                }
-                #pollResultWindow .copyTextarea {
-                    background: rgb(36, 38, 38);
-                    max-height: 400px;
-                    height: 30vh;
-                    color: rgb(255, 255, 255);
-                    resize: none;
-                    font-size: 14px;
-                    border: medium;
-                    padding: 4px;
-                    border-radius: 4px;
-                }
-                #pollResultWindow .copyButtonDiv {
-                    padding: 4px;
-                    background: rgb(36, 38, 38);
-                    margin-left: auto;
-                    border-radius: 4px;
-                }
-                #pollResultWindow .copyButtonDiv svg {
-                    height: 16px;
-                    fill: rgb(255, 255, 255);
-                }
-                #pollResultWindow .copyButtonDiv .checkSvg {
-                    fill: #00ff00;
-                    display: none;
-                }
-                #pollResultWindow .copyButtonDiv.copied svg {
-                    display: none;
-                }
-                #pollResultWindow .copyButtonDiv.copied .checkSvg {
-                    display: block;
-                }
-            `,
-        },
+        { textContent: "#pollResultWindow{background:#161717;padding:14px;font-size:14px;display:flex;flex-direction:column;gap:8px;width:90vw;max-width:300px;border-radius:8px;position:fixed;top:0;left:0;z-index:100;border:1px solid #343535}#pollResultWindow .titleBar{display:flex;align-items:center;gap:4px;margin:-14px -14px 0;padding:14px 14px 0}#pollResultWindow .titleDiv{flex:1;font-size:16px}#pollResultWindow .closeButtonDiv{padding:4px;background:#242626;border-radius:4px}#pollResultWindow .closeButtonDiv svg{height:16px;fill:rgb(255,255,255)}#pollResultWindow .windowContentDiv{display:flex;flex-direction:column;gap:8px}#pollResultWindow .replaceYouDiv{display:flex;flex-direction:column;gap:4px}#pollResultWindow .replaceYouInput{background:#242626;padding:4px;color:#fff;font-size:14px;border-radius:4px;border:none}#pollResultWindow .copyDiv{display:flex;flex-direction:column;gap:4px}#pollResultWindow .copyTextarea{background:#242626;max-height:400px;height:30vh;color:#fff;resize:none;font-size:14px;border:medium;padding:4px;border-radius:4px}#pollResultWindow .copyButtonDiv{padding:4px;background:#242626;margin-left:auto;border-radius:4px}#pollResultWindow .copyButtonDiv svg{height:16px;fill:rgb(255,255,255)}#pollResultWindow .copyButtonDiv .checkSvg{fill:#00ff00;display:none}#pollResultWindow .copyButtonDiv.copied svg{display:none}#pollResultWindow .copyButtonDiv.copied .checkSvg{display:block}" },
         pollResultWindow
     );
     const titleBar = createElement(
@@ -258,7 +165,7 @@ javascript:
         "span",
         {
             className: "replaceYouSpan",
-            textContent: `Replace "You" with:`,
+            textContent: "Replace \"You\" with:",
         },
         replaceYouDiv
     );
@@ -269,7 +176,7 @@ javascript:
             oninput: () => {
                 copyTextarea.value = getPollResultString();
             },
-         },
+        },
         replaceYouDiv
     );
     const copyDiv = createElement(
@@ -318,7 +225,7 @@ javascript:
     document.body.appendChild(pollResultWindow);
 
     function getPollResultString() {
-        var resultArray = [`${question}`];
+        var resultArray = [question];
         Object.keys(obj).forEach(option => {
             resultArray.push(`\n\n${option}:`);
             if (obj[option].length == 0) {

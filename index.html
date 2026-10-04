@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>poll-inator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+  <div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="mb-0">poll-inator</h1>
+      <div class="form-check form-switch d-flex align-items-center gap-2">
+        <i class="bi bi-sun-fill"></i>
+        <input class="form-check-input m-0" type="checkbox" role="switch" id="themeSwitch" checked>
+        <i class="bi bi-moon-stars-fill"></i>
+      </div>
+    </div>
+
+    <h2 class="h4">Install</h2>
+
+    <div class="d-flex gap-3 mb-4">
+      <span class="fw-bold">1.</span>
+      <div>
+        <p>Make sure the bookmarks bar is visible on your browser. If not, press:</p>
+        <div class="table-responsive">
+          <table class="table table-bordered w-auto">
+            <thead>
+              <tr>
+                <th>Windows / Linux</th>
+                <th>Mac</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd></td>
+                <td><kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex gap-3 mb-4">
+      <span class="fw-bold">2.</span>
+      <div class="flex-grow-1">
+        <p>Add the bookmarklet.</p>
+
+        <p>Drag this button into your bookmarks bar 👇🏾</p>
+        <p>
+          <a id="bookmarkletButton" class="btn btn-primary">poll-inator</a>
+        </p>
+
+        <p class="text-center fw-bold">OR</p>
+
+        <p>Click the clipboard button to copy the code below:</p>
+        <div class="input-group mb-3">
+          <input id="codeBox" type="text" class="form-control font-monospace" readonly>
+          <button id="codeCopyButton" class="btn btn-outline-secondary" type="button">
+            <i class="bi bi-clipboard"></i>
+          </button>
+        </div>
+        <p>Then paste it into the URL field of a new bookmark.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script>
+    const BOOKMARKLET_CODE = 'javascript:(async()=>{function e(e){return new Promise(t=>setTimeout(t,e))}document.getElementById("pollResultWindow")?.remove();const t=document.querySelector("div.x67bb7w div.x1r8uery span.x19gsaw2").textContent;async function n(){const t=document.querySelector("div.x67bb7w div.xupqr0c"),n=t.querySelector("div.x1gxa6cn").textContent,i=parseInt(n.slice(0,n.indexOf(" "))),o=[];for(var l=null;o.length<i;){var s=[...t.querySelectorAll(".x1iyjqo2.x1n2onr6")];s=s.slice(s.indexOf(l)+1),o.push(...s.map(e=>{var t=e.textContent;return t.startsWith("~")&&(t=t.slice(2)),t})),(l=s[s.length-1]).scrollIntoView(),await e(1e3)}return o}const i=await async function(){var t={};function i(){return[...document.querySelectorAll("div.x67bb7w div.x1r8uery div.x13mwh8y")].slice(1)}for(let o=0;o<i().length;o++){const l=i()[o],s=l.querySelector("span.xo1l8bm").textContent;t[s]=[];const a=l.querySelector("button.html-button");if(!a){l.querySelectorAll("span.x1iyjqo2").forEach(e=>{var n=e.textContent;n.startsWith("~")&&(n=n.slice(2)),t[s].push(n)});continue}a.click(),await e(1e3),t[s]=await n();document.querySelector("div.x67bb7w button.html-button").click(),await e(1e3)}return t}();function o(e,t,n){const i=document.createElement(e);if(t){const e=t?.className;e&&e.split(/\\s+/).forEach(e=>{i.classList.add(e)}),delete t.className,Object.assign(i,t)}return n?.appendChild(i),i}function l(e,t,n){const i=document.createElement("div"),o=document.createElementNS("http://www.w3.org/2000/svg","svg");o.setAttribute("viewBox","0 0 640 640"),i.appendChild(o);const l=document.createElementNS("http://www.w3.org/2000/svg","path");if(l.setAttribute("d",e),o.appendChild(l),t){const e=t?.className;e&&e.split(/\\s+/).forEach(e=>{i.classList.add(e)}),delete t.className,Object.assign(i,t)}return n?.appendChild(i),i}console.log(i);const s=o("div",{id:"pollResultWindow"}),a=(o("style",{textContent:"#pollResultWindow{background:#161717;padding:14px;font-size:14px;display:flex;flex-direction:column;gap:8px;width:90vw;max-width:300px;border-radius:8px;position:fixed;top:0;left:0;z-index:100;border:1px solid #343535}#pollResultWindow .titleBar{display:flex;align-items:center;gap:4px;margin:-14px -14px 0;padding:14px 14px 0}#pollResultWindow .titleDiv{flex:1;font-size:16px}#pollResultWindow .closeButtonDiv{padding:4px;background:#242626;border-radius:4px}#pollResultWindow .closeButtonDiv svg{height:16px;fill:rgb(255,255,255)}#pollResultWindow .windowContentDiv{display:flex;flex-direction:column;gap:8px}#pollResultWindow .replaceYouDiv{display:flex;flex-direction:column;gap:4px}#pollResultWindow .replaceYouInput{background:#242626;padding:4px;color:#fff;font-size:14px;border-radius:4px;border:none}#pollResultWindow .copyDiv{display:flex;flex-direction:column;gap:4px}#pollResultWindow .copyTextarea{background:#242626;max-height:400px;height:30vh;color:#fff;resize:none;font-size:14px;border:medium;padding:4px;border-radius:4px}#pollResultWindow .copyButtonDiv{padding:4px;background:#242626;margin-left:auto;border-radius:4px}#pollResultWindow .copyButtonDiv svg{height:16px;fill:rgb(255,255,255)}#pollResultWindow .copyButtonDiv .checkSvg{fill:#00ff00;display:none}#pollResultWindow .copyButtonDiv.copied svg{display:none}#pollResultWindow .copyButtonDiv.copied .checkSvg{display:block}"},s),o("div",{className:"titleBar",onmousedown:e=>{e.target!=c&&(s.initialMouseX=e.clientX,s.initialMouseY=e.clientY,s.initialX=s.getBoundingClientRect().x,s.initialY=s.getBoundingClientRect().y,window.addEventListener("mousemove",f),window.addEventListener("mouseup",C))}},s)),c=(o("div",{className:"titleDiv",textContent:"poll-inator"},a),l("M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z",{className:"closeButtonDiv",onclick:()=>{s.remove()}},a)),d=o("div",{className:"windowContentDiv"},s),p=o("div",{className:"replaceYouDiv"},d),r=(o("span",{className:"replaceYouSpan",textContent:"Replace \\"You\\" with:"},p),o("input",{className:"replaceYouInput",oninput:()=>{x.value=g()}},p)),u=o("div",{className:"copyDiv"},d),x=(o("span",{className:"copyTitleSpan",textContent:"Copy this:"},u),o("textarea",{className:"copyTextarea",value:g()},u)),v=l("M480 400L288 400C279.2 400 272 392.8 272 384L272 128C272 119.2 279.2 112 288 112L421.5 112C425.7 112 429.8 113.7 432.8 116.7L491.3 175.2C494.3 178.2 496 182.3 496 186.5L496 384C496 392.8 488.8 400 480 400zM288 448L480 448C515.3 448 544 419.3 544 384L544 186.5C544 169.5 537.3 153.2 525.3 141.2L466.7 82.7C454.7 70.7 438.5 64 421.5 64L288 64C252.7 64 224 92.7 224 128L224 384C224 419.3 252.7 448 288 448zM160 192C124.7 192 96 220.7 96 256L96 512C96 547.3 124.7 576 160 576L352 576C387.3 576 416 547.3 416 512L416 496L368 496L368 512C368 520.8 360.8 528 352 528L160 528C151.2 528 144 520.8 144 512L144 256C144 247.2 151.2 240 160 240L176 240L176 192L160 192z",{className:"copyButtonDiv",onclick:()=>{navigator.clipboard.writeText(x.value),v.classList.add("copied"),setTimeout(()=>{v.classList.remove("copied")},2e3)}},u),w=document.createElementNS("http://www.w3.org/2000/svg","svg");w.setAttribute("viewBox","0 0 640 640"),w.classList.add("checkSvg"),v.appendChild(w);const m=document.createElementNS("http://www.w3.org/2000/svg","path");function g(){var e=[t];return Object.keys(i).forEach(t=>{e.push(`\\n\\n${t}:`),0!=i[t].length?i[t].forEach((t,n)=>{if(0==n&&"You"==t){const e=r.value;e&&(t=e)}e.push(`\\n${n+1}. ${t}`)}):e.push("\\nNone")}),e.join("")}function f(e){const t=e.clientX-s.initialMouseX,n=e.clientY-s.initialMouseY;s.style.left=`${s.initialX+t}px`,s.style.top=`${s.initialY+n}px`}function C(){window.removeEventListener("mouseup",C),window.removeEventListener("mousemove",f),delete s.initialY,delete s.initialX,delete s.initialMouseY,delete s.initialMouseX}m.setAttribute("d","M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 543.1 258.5 543.9C249.1 544.7 240 541.2 233.4 534.6L105.4 406.6C92.9 394.1 92.9 373.8 105.4 361.3C117.9 348.8 138.2 348.8 150.7 361.3L252.2 462.8L486.2 141.1C496.6 126.8 516.6 123.6 530.9 134z"),w.appendChild(m),document.body.appendChild(s)})();';
+
+    const bookmarkletButton = document.getElementById("bookmarkletButton");
+    bookmarkletButton.href = BOOKMARKLET_CODE;
+
+    const codeBox = document.getElementById("codeBox");
+    codeBox.value = BOOKMARKLET_CODE;
+
+    const codeCopyButton = document.getElementById("codeCopyButton");
+    codeCopyButton.onclick = () => {
+      navigator.clipboard.writeText(BOOKMARKLET_CODE);
+      codeCopyButton.innerHTML = '<i class="bi bi-clipboard-check"></i>';
+      setTimeout(() => {
+        codeCopyButton.innerHTML = '<i class="bi bi-clipboard"></i>';
+      }, 1000);
+    };
+
+    const themeSwitch = document.getElementById('themeSwitch');
+    themeSwitch.onchange = () => {
+      document.documentElement.setAttribute('data-bs-theme', themeSwitch.checked ? 'dark' : 'light');
+    };
+  </script>
+</body>
+
+</html>
