@@ -8,11 +8,22 @@ Bookmarklet to extract WhatsApp poll responses.
 
 ## Demo
 
-![demo](https://raw.githubusercontent.com/NightFuryyyyy/poll-inator/refs/heads/assets/demo.gif)
+<table>
+    <tbody>
+        <tr>
+            <td width="600px"><img src="https://raw.githubusercontent.com/NightFuryyyyy/poll-inator/refs/heads/assets/demo.gif"></td>
+            <td align="center">EZ ✨</td>
+        </tr>
+        <tr>
+            <td><img src="https://raw.githubusercontent.com/NightFuryyyyy/poll-inator/refs/heads/assets/long_list.gif"></td>
+            <td align="center">Long list?<br>No problem!</td>
+        </tr>
+    </tbody>
+</table>
 
 ## Install
 
-Installation tutorial: [example](https://example.com)
+Click [this link](https://example.com) for instructions.
 
 ## Bonus
 
